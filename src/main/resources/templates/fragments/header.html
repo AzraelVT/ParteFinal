@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css"></link>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- th:fragment define un fragment los cuales sirven para evitar la redundancia de codigo -->
+	<!-- Sintaxis th:fragment="Nombre del fragment" -->
+	<div th:fragment="header">
+		<!-- this is header -->
+		<nav class="navbar navbar-inverse " >
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" th:href="@{/bienvenido}">HOME PAGE</a>
+				</div>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<ul class="nav navbar-nav navbar-right">
+        <li class="active"></li></ul> </button>
+				<div id="navbar" class="dropdown">
+					<ul class="nav navbar-nav">
+						
+						<li class="dropdown" ><a th:href="@{/distrito/listar}">Distrito</a>
+						<ul>	<li class="dropdown" ><a th:href="@{/distrito/irRegistrar}" style="color:yellow" >Registrar</a></ul>
+						<ul>	<li class="dropdown" ><a th:href="@{/distrito/listar}" style="color:yellow" >Listar</a></ul>
+						</li>
+						<li class="active"><a th:href="@{/persona/listar}">Persona</a>
+						<ul>	<li class="dropdown" ><a th:href="@{/persona/irRegistrar}" style="color:yellow" >Registrar</a></ul>
+						<ul>	<li class="dropdown" ><a th:href="@{/persona/}" style="color:yellow" >Listar</a></ul>
+						</li>
+						<li class="active"><a th:href="@{/sede/listar}">Sede</a>
+						<ul>	<li class="dropdown" ><a th:href="@{/sede/irRegistrar}" style="color:yellow" >Registrar</a></ul>
+						<ul>	<li class="dropdown" ><a th:href="@{/sede/listar}" style="color:yellow" >Listar</a></ul>
+						</li>
+						<li class="active"><a th:href="@{/cancha/listar}">Cancha</a>
+						<ul>	<li class="dropdown" ><a th:href="@{/cancha/irRegistrar}" style="color:yellow" >Registrar</a></ul>
+						<ul>	<li class="dropdown" ><a th:href="@{/cancha/listar}" style="color:yellow" >Listar</a></ul>
+						</li>
+						<li class="active"><a th:href="@{/reserva/listar}">Reserva</a>
+						
+						<ul>	<li class="dropdown" ><a th:href="@{/reserva/irRegistrar}" style="color:yellow" >Registrar</a></ul>
+						<ul>	<li class="dropdown" ><a th:href="@{/reserva/listar}" style="color:yellow" >Listar</a></ul></li>
+						
+
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+                <button id="loginbutton" type="button" class="btn btn-primary narbar-btn"><i class="glyphicon glyphicon-log-in"></i><a href="/login" style="color:red"> Ingresar</a></button>
+                <button type="button" class="btn btn-success navbar-btn"><i class="glyphicon glyphicon-link"></i><a href="/persona/irRegistrar" style="color:red">Crear una cuenta</a></button>
+              </ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+</body>
+</html>
